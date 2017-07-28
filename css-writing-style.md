@@ -88,6 +88,9 @@ a[href~="get"] {
 ## 属性声明顺序
 
 在声明样式属性时，按照chrome开发者工具里的元素布局模型，从里到外的顺序书写，依次是：
+
+![chrome 布局模型](https://raw.githubusercontent.com/Mcbai/coding-style/master/img/boxmodel.png)
+
 1. 盒模型
 2. 定位
 3. 文字排版
