@@ -29,5 +29,3 @@ body {
 ```
 
 > 当然，我们并不用每次都手动去添加修改这个文件头注释，大家可以参考[此vscode插件](https://marketplace.visualstudio.com/items?itemName=mikey.vscode-fileheader)。
-
-## 

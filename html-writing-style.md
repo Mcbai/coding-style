@@ -56,6 +56,14 @@
 <input type="text" disabled>
 ```
 
+## 自定义属性以`data-`为前缀
+
+根据HTML5规范，使用`data-`前缀来区分自定义属性和标准属性，如：
+
+```HTML
+<div data-pid="3355"></div>
+```
+
 ## CSS与JavaScript文件引入
 
 + `<link>`与`<script>`标签的`type`属性可以省略，但`<link>`标签必须添加`rel`属性
