@@ -64,6 +64,22 @@
 <div data-pid="3355"></div>
 ```
 
+## 用于JavaScript操作的DOM选择器，尽量使用`id`
+
+对于需要单个操作的DOM，尽量使用`id`选择器，可以在一定程度上提高效率，并且避免错误。
+
+```HTML
+<!-- login.html -->
+<input type="text" id="login-name">
+<input type="password" id="login-password">
+
+<script>
+var loginName = document.getElementById('login-name')
+var loginPassword = document.getElementById('login-password')  
+</script>
+```
+
+
 ## CSS与JavaScript文件引入
 
 + `<link>`与`<script>`标签的`type`属性可以省略，但`<link>`标签必须添加`rel`属性
@@ -86,6 +102,24 @@
   <script src="xxx"></script>
 </body>
 </html>
+```
+
+## 尽可能使用语义化标签
+
+尽可能使用语义化标签，使用户在无法加载CSS的情况下也能获得更好的体验，并且开发与维护也能更容易。
+
+```HTML
+<!-- bad -->
+<div class="list">
+  <div class="item"></div>
+  <div class="item"></div>
+</div>
+
+<!-- good -->
+<ul class="list">
+  <li class="item"></li>
+  <li class="item"></li>
+</ul>
 ```
 
 ## 尽量减少标签的数量

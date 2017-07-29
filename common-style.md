@@ -29,3 +29,7 @@ body {
 ```
 
 > 当然，我们并不用每次都手动去添加修改这个文件头注释，大家可以参考[此vscode插件](https://marketplace.visualstudio.com/items?itemName=mikey.vscode-fileheader)。
+
+## 如果引用资源的`URL`协议部分与页面相同，建议省略协议前缀
+
+原因是当项目的协议升级时，不需要手动再将每个`http`都改为`https`。
