@@ -79,6 +79,17 @@ var loginPassword = document.getElementById('login-password')
 </script>
 ```
 
+## 为重要图片添加 alt 属性
+
+可图片加载失败时，可以显示文字，提高用户体验。
+
+## 为`input`元素指定`type`属性
+
+根据内容类型指定输入框类型，会更加语义化，并且在移动端能获得能友好的输入体验。
+
+```HTML
+<input type="tel" placeholder="请输入手机号">
+```
 
 ## CSS与JavaScript文件引入
 
