@@ -5,16 +5,14 @@
 + 每个选择器占一行
 + `{` 前插入一个空格，并且与最后一个选择器同行
 + `}` 独占一行
-+ 每个属性的`:`后都跟一个空格
 + 每一段样式的最后一行声明也要加`;`
-+ `rgb()` `rgba()`等属性值的逗号后都插入一个空格
 + 属性值中，小数点前的0省略
 + 属性值若是0，则后面不带单位
 + 能缩写值，都尽量缩写
 + 凡是需要使用引号的地方，都使用双引号`""`
 + `url`引用中的引号不能省略，如`background-image: url("")`
 + 当一个属性有多个属性值时，以逗号 , 分隔属性值，每个逗号后添加一个空格，当单个属性值过长时，每个属性值独占一行。
-+ 每一个样式声明块后，都保留一个空行
++ 每一个样式声明块后（即`}`后），都保留一个空行
 
 ```CSS
 /* bad */
@@ -56,12 +54,36 @@ a[href~="get"] {
 
 .box {
   background:
-      linear-gradient(135deg, deeppink 25%, transparent 25%) -50px 0,
-      linear-gradient(225deg, deeppink 25%, transparent 25%) -50px 0,
-      linear-gradient(315deg, deeppink 25%, transparent 25%),
-      linear-gradient(45deg, deeppink 25%, transparent 25%);
+    linear-gradient(135deg, deeppink 25%, transparent 25%) -50px 0,
+    linear-gradient(225deg, deeppink 25%, transparent 25%) -50px 0,
+    linear-gradient(315deg, deeppink 25%, transparent 25%),
+    linear-gradient(45deg, deeppink 25%, transparent 25%);
 }
 ```
+
+## 空格
+
++ `{` 前保留一个空格
++ 每个属性的`:`后都跟一个空格
++ `rgb()` `rgba()`等属性值的逗号后都插入一个空格
++ 选择器'>', '+', '~'前后
++ `!important` '!'后
++ 注释`/*` 前后和 `*/`前
+
+```CSS
+/* bad */
+.parent>.child {
+  color :red! important;/*没有留空格*/
+  background-color: rgba(0,0,0,.5);
+}
+
+/* good */
+.parent > .child {
+  color: red !important; /* 插入空格 */
+  background-color: rgba(0, 0, 0, .5);
+}
+```
+
 ## 禁止使用id选择器
 在书写样式时，禁止使用id选择器，因为其优先级太高，覆盖样式容易造成麻烦。
 
