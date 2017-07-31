@@ -76,7 +76,9 @@ a[href~="get"] {
   color :red! important;/*没有留空格*/
   background-color: rgba(0,0,0,.5);
 }
+```
 
+```CSS
 /* good */
 .parent > .child {
   color: red !important; /* 插入空格 */
@@ -88,7 +90,29 @@ a[href~="get"] {
 
 在书写样式时，禁止使用id选择器，因为其优先级太高，覆盖样式容易造成麻烦。
 
-## 选择器禁止超过两层
+## 禁止使用标签选择器
+
+```CSS
+/* bad */
+.menus li {
+  display: inline-block;
+  padding: 5px 10px;
+  color: #ff2;
+  list-style: none;
+}
+```
+
+```CSS
+/* good */
+.menus-item {
+  display: inline-block;
+  padding: 5px 10px;
+  color: #ff2;
+  list-style: none;
+}
+```
+
+## 禁止选择器超过三层
 
 在使用后代选择器、子代选择器、兄弟选择器等，禁止超过两层
 
