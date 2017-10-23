@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>mPainter</title>
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://unpkg.com/alloylever@1.0.1/alloy-lever.js"></script>
+</head>
+<body>
+    <a href="https://github.com/mrmarktyy/mPainter"><img id="fork-me" alt="Fork me on GitHub" src="img/forkme.png" /></a>
+    <div class="container">
+        <h1>mPainter Demo</h1>
+        <span style="float:right;">v0.6.3</span>
+        <div id="my-toolhook"></div>
+        <div id="my-hook"></div>
+    </div>
+    <script src="src/mPainter.js"></script>
+    <script>
+        AlloyLever.config({
+            cdn:'//s.url.cn/qqun/qun/qqweb/m/qun/confession/js/vconsole.min.js',  //vconsole的CDN地址
+            reportUrl: "//a.qq.com",  //错误上报地址
+            reportPrefix: 'qun',    //错误上报msg前缀，一般用于标识业务类型
+            reportKey: 'msg',        //错误上报msg前缀的key，用户上报系统接收存储msg
+            otherReport: {              //需要上报的其他信息
+                uin: 491862102
+            },
+            entry:"#entry"          //请点击这个DOM元素6次召唤vConsole。//你可以通过AlloyLever.entry('#entry2')设置多个机关入口召唤神龙
+        })
+
+        var config = {
+            width: 980,
+            height: 500
+        };
+        var arr = []
+        arr[0] = new mPainter('my-toolhook', 'my-hook', config);
+    </script>
+</body>
+</html>

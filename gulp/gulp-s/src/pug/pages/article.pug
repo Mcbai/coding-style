@@ -1,0 +1,19 @@
+//- 文章详情页
+extends ../layout.pug
+
+block link
+  link(rel="stylesheet", href="../css/main.css")
+
+block content
+
+  div.ui.main
+    //- 文章主体内容
+    article.ui.text.container.ql-snow
+      h1.ui.header #{'sss'}
+      div.article__label
+        span.ui.orange.basic.label 时间·#{'2016-06-24'}
+        div.ui.labeled.tiny.button(tabindex="0")
+          div.ui.orange.tiny.button!= '<i class="heart icon"></i>Like'
+          a.ui.basic.orange.tiny.left.pointing.label #{'likes'}
+      div.content__article.ql-editor= 'content'
+  script(src="../js/article.js")

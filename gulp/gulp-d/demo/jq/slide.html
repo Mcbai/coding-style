@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>slide</title>
+
+  <style>
+    #content {
+      width: 100px;
+      /* height: 500px; */
+      background-color: #5f3;
+      transition: height 1s;
+    }
+    #btn:hover #content {
+      height: 0;
+    }
+  </style>
+</head>
+<body>
+  <button id="btn">点击</button>
+  <div id="content">我是slide内容我是slide内容我是slide内容我是slide内容我是slide内容我是slide内容我是slide内容我是slide内容我是slide内容我是slide内容</div>
+
+  <script>
+    document.getElementById('btn').onclick = function () {
+      var elHeight = document.getElementById('content').clientHeight
+      document.getElementById('content').style.height = elHeight + 'px'
+      document.getElementById('content').style.transition = 'height 1s' 
+      setTimeout(function () {
+        document.getElementById('content').style.height = 0
+      },0)
+    }
+  </script>
+</body>
+</html>

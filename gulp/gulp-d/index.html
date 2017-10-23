@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>测试</title>
+  <script src="http://apps.bdimg.com/libs/zepto/1.1.4/zepto.min.js"></script>
+</head>
+<body>
+  测试返回值
+  <div id="div"></div>
+
+  <script>
+    $.ajax({
+      url: 'http://localhost:8080/WxReport/getTermReportDetail',
+      type: 'GET',
+      dataType: 'json',
+      // data: {
+      //   param1: 'value1'
+      // },
+      success: function (data) {
+        // $('#div').html(data)
+        console.log(JSON.stringify(data))
+        console.log(data)
+      },
+      error: function (data) {
+        console.log(data)
+      }
+    })
+  </script>
+</body>
+</html>

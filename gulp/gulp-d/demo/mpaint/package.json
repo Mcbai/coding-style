@@ -1,0 +1,21 @@
+{
+  "name": "mPainter",
+  "version": "0.6.3",
+  "description": "mPainter is a simple, light-weighted, dependency free SVG painting widget library, which can easily create or convert a DOM element to a SVG painting board.",
+  "main": "index.html",
+  "url": "http://paint.tantanguanguan.com",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mrmarktyy/mPainter.git"
+  },
+  "author": "Mark Zhou",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mrmarktyy/mPainter/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.6.2",
+    "grunt-contrib-uglify": "~0.2.2"
+  }
+}

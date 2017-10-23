@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>报告</title>
+    <style>
+    .button {
+        position: fixed;
+        right: 200px;
+        bottom: 200px;
+        width: 50px;
+        height: 50px;
+    }
+    .wraper {
+        display: none;
+        width: 800px;
+        height: 800px;
+        border: 1px solid #ccc;
+        margin: 100px auto;
+    }
+    </style>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="wraper">
+        <iframe src="" frameborder="0" id="kuang"></iframe>
+    </div>
+    <button class="button">帮助</button>
+
+    <script>
+        $('.button').click(function () {
+            var title = $('title').text()
+            goi(title)
+        })
+
+        function goi(title) {
+            var gowhere;
+            switch (title) {
+                case '阅卷':
+                    gowhere = 'helpDoc/yuejuan.html';
+                    break;
+                case '报告':
+                    gowhere = 'helpDoc/baogao.html';
+                    break;
+                default:
+                    console.log('no')
+            }
+            $('.wraper').show()
+            document.getElementById('kuang').src=gowhere           
+        }
+    </script>
+</body>
+
+</html>
