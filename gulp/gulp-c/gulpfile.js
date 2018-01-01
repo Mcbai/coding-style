@@ -11,8 +11,8 @@ var gulp = require('gulp'),
 var LessAutoprefix = require('less-plugin-autoprefix'),
     autoprefix = new LessAutoprefix({ browsers: ['last 2 versions'] });
 
-var webpack = require('webpack');
-
+var webpack = require('webpack-stream');
+var named = require('vinyl-named');
 // 文件路径
 var paths = {
   pug: {
@@ -47,32 +47,12 @@ gulp.task('browserSync', function() {
 })
 
 // webpack任务测试
+var config = require('./webpack.config.js');
 gulp.task('webpack', function () {
-  var config = {
-    entry: {
-      home: 'src/js/home.js',
-      report: 'src/js/report.js'
-    },
-    output: {
-      path: '/dist/',
-      filename: '[name].js'
-    },
-    plugins: [
-      new webpack.optimize.CommonsChunkPlugin({
-        name: "vendor",
-
-        // filename: "vendor.js"
-        // (给 chunk 一个不同的名字)
-
-        minChunks: 2,
-        // 随着 entrie chunk 越来越多，
-        // 这个配置保证没其它的模块会打包进 vendor chunk
-      })
-    ]
-  }
-  return gulp.src('src/js/**/*')
+  return gulp.src(['src/js/home.js', 'src/js/report.js'])
+    .pipe(named())
     .pipe(webpack(config))
-    .pipe(gulp.dest('./dist'))
+    .pipe(gulp.dest(paths.js.dest))
 })
 
 
@@ -115,9 +95,9 @@ gulp.task('img', function() {
 gulp.task('watch', function() {
   gulp.watch(paths.pug.watch, gulp.parallel('pug'))
   gulp.watch(paths.less.watch, gulp.parallel('less'))
-  gulp.watch(paths.js.watch, gulp.parallel('js'))
+  gulp.watch(paths.js.watch, gulp.parallel('webpack'))
   gulp.watch(paths.img.watch, gulp.parallel('img'))
 })
 
 // 默认任务，在命令行输入`gulp`来启动任务
-gulp.task('default', gulp.parallel('watch', 'browserSync', 'pug', 'less', 'js'))
+gulp.task('default', gulp.parallel('watch', 'browserSync', 'pug', 'less', 'webpack'))
